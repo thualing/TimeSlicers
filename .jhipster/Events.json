@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "inTimeline",
+            "otherEntityName": "timelines",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "occursAt",
+            "otherEntityName": "location",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "participants",
+            "otherEntityName": "persona",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "attends"
+        },
+        {
+            "relationshipName": "hasItems",
+            "otherEntityName": "item",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "isAt"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timeOfEvent",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171124180322",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "events",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

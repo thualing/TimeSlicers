@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "inGroup",
+            "otherEntityName": "timelineGroups",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171124175848",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "timelines",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

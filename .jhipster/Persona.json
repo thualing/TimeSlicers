@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "name",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "persona"
+        },
+        {
+            "relationshipName": "attends",
+            "otherEntityName": "events",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "participants"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20171124181412",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "persona",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

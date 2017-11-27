@@ -1,0 +1,45 @@
+
+<div *ngIf="events">
+    <h2><span>Events</span> {{events.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{events.name}}</span>
+        </dd>
+        <dt><span>Time Of Event</span></dt>
+        <dd>
+            <span>{{events.timeOfEvent | date:'medium'}}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{events.description}}</span>
+        </dd>
+        <dt><span>In Timeline</span></dt>
+        <dd>
+            <div *ngIf="events.inTimeline">
+                <a [routerLink]="['/timelines', events.inTimeline?.id]">{{events.inTimeline?.name}}</a>
+            </div>
+        </dd>
+        <dt><span>Occurs At</span></dt>
+        <dd>
+            <div *ngIf="events.occursAt">
+                <a [routerLink]="['/location', events.occursAt?.id]">{{events.occursAt?.name}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'events/'+ events.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

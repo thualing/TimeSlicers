@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Events.
+    -->
+    <changeSet id="20171124180322-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="in_timeline_id"
+                                 baseTableName="events"
+                                 constraintName="fk_events_in_timeline_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="timelines"/>
+
+        <addForeignKeyConstraint baseColumnNames="occurs_at_id"
+                                 baseTableName="events"
+                                 constraintName="fk_events_occurs_at_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"/>
+
+    </changeSet>
+</databaseChangeLog>

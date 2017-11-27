@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Timelines.
+    -->
+    <changeSet id="20171124175848-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="in_group_id"
+                                 baseTableName="timelines"
+                                 constraintName="fk_timelines_in_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="timeline_groups"/>
+
+    </changeSet>
+</databaseChangeLog>

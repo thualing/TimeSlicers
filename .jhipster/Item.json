@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "isAt",
+            "otherEntityName": "events",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "hasItem"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171124181254",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "item",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}
